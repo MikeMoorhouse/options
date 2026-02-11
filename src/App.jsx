@@ -394,6 +394,20 @@ export default function App() {
         </div>
 
         <SubjectPages subjects={SUBJECT_PAGES} />
+
+        <footer className="flex justify-center pb-8">
+          <a
+            href="https://buymeacoffee.com/chasewebdesign"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-3 rounded-full border border-emerald-200/40 bg-white/80 px-6 py-2.5 text-xs font-black uppercase tracking-widest text-emerald-900 shadow-[0_12px_28px_-18px_rgba(15,23,42,0.65)] transition hover:-translate-y-0.5 hover:border-emerald-200/70 hover:bg-gradient-to-r hover:from-slate-900 hover:via-slate-800 hover:to-emerald-900 hover:text-white hover:shadow-[0_18px_36px_-18px_rgba(6,78,59,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/70"
+          >
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-900 text-[10px] font-black text-white transition group-hover:bg-white group-hover:text-emerald-900">
+              ☕
+            </span>
+            Buy me a coffee
+          </a>
+        </footer>
       </div>
     </div>
   );
