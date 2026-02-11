@@ -20,7 +20,7 @@ export default function SubjectPages({ subjects }) {
             className="bg-white/90 backdrop-blur border border-white/60 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.45)] rounded-[32px] p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8"
           >
             <div className="lg:col-span-4 space-y-4">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-600">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#57b5e6]">
                 <Sparkles size={14} /> {subject.board}
               </div>
               <h3 className="text-2xl font-black text-slate-900 font-display">{subject.title}</h3>
@@ -37,13 +37,13 @@ export default function SubjectPages({ subjects }) {
             <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-sm font-bold text-slate-700">
-                  <BookOpen size={16} className="text-emerald-600" /> Course Snapshot
+                  <BookOpen size={16} className="text-[#14377d]" /> Course Snapshot
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed">{subject.overview}</p>
                 <ul className="text-sm text-slate-600 space-y-2">
                   {subject.highlights.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#57b5e6]" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -52,7 +52,7 @@ export default function SubjectPages({ subjects }) {
               <div className="space-y-4">
                 <div>
                   <div className="flex items-center gap-2 text-sm font-bold text-slate-700">
-                    <ClipboardList size={16} className="text-emerald-600" /> Assessment
+                    <ClipboardList size={16} className="text-[#14377d]" /> Assessment
                   </div>
                   <ul className="mt-2 text-sm text-slate-600 space-y-2">
                     {subject.assessment.map((item) => (
@@ -65,7 +65,7 @@ export default function SubjectPages({ subjects }) {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 text-sm font-bold text-slate-700">
-                    <GraduationCap size={16} className="text-emerald-600" /> Pathways
+                    <GraduationCap size={16} className="text-[#14377d]" /> Pathways
                   </div>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">{subject.careers}</p>
                 </div>

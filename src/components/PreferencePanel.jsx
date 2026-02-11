@@ -25,12 +25,12 @@ export default function PreferencePanel({
 
       <div className="mb-5">
         <label className="text-xs font-semibold text-slate-600 uppercase tracking-widest flex items-center gap-2 mb-2">
-          <Target size={14} className="text-emerald-600" /> Future Career Focus
+          <Target size={14} className="text-[#14377d]" /> Future Career Focus
         </label>
         <select
           value={careerValue}
           onChange={(e) => onCareerChange(e.target.value)}
-          className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#57b5e6]"
         >
           {careerOptions.map(option => (
             <option key={option.value} value={option.value}>

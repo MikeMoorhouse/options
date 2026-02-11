@@ -20,7 +20,7 @@ export default function BlockGrid({
         >
           <div
             className={`${
-              blockStatus[blockId] ? 'bg-rose-600' : 'bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-900'
+              blockStatus[blockId] ? 'bg-[#cd1543]' : 'bg-gradient-to-r from-[#152458] via-[#14377d] to-[#57b5e6]'
             } text-white py-3 px-4 text-center text-[10px] font-black uppercase tracking-[0.35em]`}
           >
             Block {blockId}
@@ -39,12 +39,12 @@ export default function BlockGrid({
                   className={`w-full text-left p-3 rounded-2xl text-xs font-semibold transition-all border flex justify-between items-center relative
                     ${
                       isFirst
-                        ? 'bg-emerald-600 border-emerald-500 text-white shadow-lg scale-[1.02] z-10'
+                        ? 'bg-[#14377d] border-[#14377d] text-white shadow-lg scale-[1.02] z-10'
                         : isSecond
                           ? 'bg-amber-400 border-amber-300 text-slate-900 shadow-md'
                           : isDisabled
                             ? 'bg-slate-100 text-slate-300 border-transparent opacity-50 cursor-not-allowed'
-                            : 'bg-white border-slate-200 text-slate-700 hover:border-emerald-200 hover:bg-emerald-50/40'
+                            : 'bg-white border-slate-200 text-slate-700 hover:border-sky-200 hover:bg-sky-50/40'
                     }
                   `}
                 >

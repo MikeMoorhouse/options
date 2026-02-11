@@ -251,26 +251,26 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 relative overflow-hidden">
-      <div className="absolute -top-40 right-0 h-80 w-80 rounded-full bg-emerald-200/40 blur-3xl" />
-      <div className="absolute top-1/3 -left-32 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-amber-200/40 blur-3xl" />
+      <div className="absolute -top-40 right-0 h-80 w-80 rounded-full bg-[#57b5e6]/35 blur-3xl" />
+      <div className="absolute top-1/3 -left-32 h-72 w-72 rounded-full bg-[#14377d]/15 blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-[#cd1543]/15 blur-3xl" />
 
       <div className="max-w-[1600px] mx-auto p-4 lg:p-10 space-y-10 relative">
-        <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-900 text-white rounded-[32px] p-6 md:p-8 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.7)]">
+        <header className="bg-gradient-to-r from-[#152458] via-[#14377d] to-[#57b5e6] text-white rounded-[32px] p-6 md:p-8 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.7)]">
           <div className="flex flex-col lg:flex-row gap-8 items-start lg:items-start justify-between">
             <div className="flex items-center gap-6">
               <div className="bg-white/10 rounded-3xl p-4 border border-white/10">
                 <img src={logo} alt="Wellacre logo" className="h-20 w-auto" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-emerald-200">Wellacre Academy</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-sky-100 font-ui">Wellacre Academy</p>
                 <h1 className="text-3xl md:text-4xl font-black font-display">Year 9 Options Picker</h1>
               </div>
             </div>
 
             <div className="flex flex-col items-end gap-4 w-full lg:w-auto">
               <div className="w-full max-w-sm">
-                <div className="text-[10px] uppercase tracking-[0.25em] text-emerald-200/80 text-right mb-2">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-sky-100/80 text-right mb-2 font-ui">
                   Important dates
                 </div>
                 <div className="space-y-2">
@@ -289,9 +289,9 @@ export default function App() {
                         key={item.label}
                         className="flex items-center justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur text-[11px] text-white/80"
                       >
-                        <div className="text-xs font-semibold text-white/90">{item.label}</div>
+                        <div className="text-xs font-semibold text-white/90 font-ui">{item.label}</div>
                         {countdown && (
-                          <div className="text-[10px] font-black uppercase tracking-widest text-white/70">{countdown}</div>
+                          <div className="text-[10px] font-black uppercase tracking-widest text-white/70 font-ui">{countdown}</div>
                         )}
                       </div>
                     );
@@ -301,9 +301,9 @@ export default function App() {
 
               <div className="flex flex-col sm:flex-row items-stretch gap-3 w-full max-w-sm">
                 <div
-                  className={`flex-1 px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 border-2 ${
+                  className={`flex-1 px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest font-ui flex items-center justify-center gap-2 border-2 ${
                     validation.status === 'VALID'
-                      ? 'bg-emerald-400/20 border-emerald-300 text-emerald-100'
+                      ? 'bg-sky-400/20 border-sky-200 text-sky-100'
                       : validation.status === 'PROBLEM'
                         ? 'bg-amber-400/20 border-amber-300 text-amber-100'
                         : 'bg-rose-400/20 border-rose-300 text-rose-100'
@@ -314,7 +314,7 @@ export default function App() {
                 </div>
                 <button
                   onClick={reset}
-                  className="flex-1 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all text-xs font-black uppercase tracking-widest font-ui flex items-center justify-center gap-2"
                 >
                   <Eraser size={16} /> Reset
                 </button>
@@ -326,7 +326,7 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-white/90 backdrop-blur p-6 rounded-2xl border border-white/60 shadow-[0_20px_45px_-35px_rgba(15,23,42,0.6)]">
-              <div className="flex items-center gap-3 text-sm font-semibold text-emerald-700">
+              <div className="flex items-center gap-3 text-sm font-semibold text-[#14377d]">
                 <ShieldCheck size={16} /> Option rules at a glance
               </div>
               <ul className="mt-3 text-xs text-slate-600 space-y-2">
@@ -368,7 +368,7 @@ export default function App() {
             )}
 
             <div className="flex items-center gap-3">
-              <Sparkles size={18} className="text-emerald-600" />
+              <Sparkles size={18} className="text-[#14377d]" />
               <h2 className="text-2xl font-black font-display text-slate-900">Choose Your Subjects</h2>
             </div>
 
@@ -404,7 +404,7 @@ export default function App() {
             href="https://www.wellacre.org"
             target="_blank"
             rel="noreferrer"
-            className="text-xs font-semibold text-emerald-800 underline-offset-4 hover:underline"
+            className="text-xs font-semibold text-[#14377d] underline-offset-4 hover:underline"
           >
             Wellacre Academy
           </a>
@@ -412,9 +412,9 @@ export default function App() {
             href="https://buymeacoffee.com/chasewebdesign"
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-3 rounded-full border border-emerald-200/40 bg-white/80 px-6 py-2.5 text-xs font-black uppercase tracking-widest text-emerald-900 shadow-[0_12px_28px_-18px_rgba(15,23,42,0.65)] transition hover:-translate-y-0.5 hover:border-emerald-200/70 hover:bg-gradient-to-r hover:from-slate-900 hover:via-slate-800 hover:to-emerald-900 hover:text-white hover:shadow-[0_18px_36px_-18px_rgba(6,78,59,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/70"
+            className="group inline-flex items-center gap-3 rounded-full border border-sky-200/60 bg-white/80 px-6 py-2.5 text-xs font-black uppercase tracking-widest font-ui text-[#14377d] shadow-[0_12px_28px_-18px_rgba(15,23,42,0.65)] transition hover:-translate-y-0.5 hover:border-sky-200/80 hover:bg-gradient-to-r hover:from-[#152458] hover:via-[#14377d] hover:to-[#57b5e6] hover:text-white hover:shadow-[0_18px_36px_-18px_rgba(20,55,125,0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300/70"
           >
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-900 text-[10px] font-black text-white transition group-hover:bg-white group-hover:text-emerald-900">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#152458] text-[10px] font-black text-white transition group-hover:bg-white group-hover:text-[#14377d]">
               ☕
             </span>
             Buy me a coffee

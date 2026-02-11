@@ -1,13 +1,23 @@
 :root {
   color-scheme: light;
+  --wellacre-blue: #14377d;
+  --wellacre-blue-dark: #152458;
+  --wellacre-blue-accent: #57b5e6;
+  --wellacre-red-accent: #cd1543;
+  --wellacre-text: #42454f;
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  color: var(--wellacre-text);
 }
 
 .font-display {
-  font-family: 'Fraunces', serif;
+  font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+.font-ui {
+  font-family: 'Raleway', system-ui, -apple-system, sans-serif;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
