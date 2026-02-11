@@ -395,7 +395,19 @@ export default function App() {
 
         <SubjectPages subjects={SUBJECT_PAGES} />
 
-        <footer className="flex justify-center pb-8">
+        <footer className="flex flex-col items-center gap-5 pb-8 text-center">
+          <p className="max-w-3xl text-xs text-slate-500">
+            This site is not affiliated with Wellacre Academy. It is a third-party website for information purposes only. Any
+            information around subjects or option choices should be directed to Wellacre Academy directly.
+          </p>
+          <a
+            href="https://www.wellacre.org"
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs font-semibold text-emerald-800 underline-offset-4 hover:underline"
+          >
+            Wellacre Academy
+          </a>
           <a
             href="https://buymeacoffee.com/chasewebdesign"
             target="_blank"
