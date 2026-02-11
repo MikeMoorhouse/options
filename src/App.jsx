@@ -256,8 +256,8 @@ export default function App() {
       <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-amber-200/40 blur-3xl" />
 
       <div className="max-w-[1600px] mx-auto p-4 lg:p-10 space-y-10 relative">
-        <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-900 text-white rounded-[32px] p-8 md:p-10 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.7)]">
-          <div className="flex flex-col lg:flex-row gap-8 items-start lg:items-center justify-between">
+        <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-900 text-white rounded-[32px] p-6 md:p-8 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.7)]">
+          <div className="flex flex-col lg:flex-row gap-8 items-start lg:items-start justify-between">
             <div className="flex items-center gap-6">
               <div className="bg-white/10 rounded-3xl p-4 border border-white/10">
                 <img src={logo} alt="Wellacre logo" className="h-20 w-auto" />
@@ -267,25 +267,58 @@ export default function App() {
                 <h1 className="text-3xl md:text-4xl font-black font-display">Year 9 Options Picker</h1>
               </div>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <div
-                className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2 border-2 ${
-                  validation.status === 'VALID'
-                    ? 'bg-emerald-400/20 border-emerald-300 text-emerald-100'
-                    : validation.status === 'PROBLEM'
-                      ? 'bg-amber-400/20 border-amber-300 text-amber-100'
-                      : 'bg-rose-400/20 border-rose-300 text-rose-100'
-                }`}
-              >
-                {validation.status === 'VALID' ? <CheckCircle2 size={16} /> : <AlertTriangle size={16} />}
-                {validation.status === 'VALID' ? 'Complete' : 'Incomplete'}
+
+            <div className="flex flex-col items-end gap-4 w-full lg:w-auto">
+              <div className="w-full max-w-sm">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-emerald-200/80 text-right mb-2">
+                  Important dates
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { label: '12th Feb - Progress evening', date: '2026-02-12' },
+                    { label: '26th Feb - Form Submission', date: '2026-02-26' },
+                    { label: '25th Sep - Change Deadline', date: '2026-09-25' }
+                  ].map((item) => {
+                    const now = new Date();
+                    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                    const target = new Date(`${item.date}T00:00:00`);
+                    const diffDays = Math.round((target - today) / (1000 * 60 * 60 * 24));
+                    const countdown = diffDays === 0 ? 'today' : diffDays > 0 ? `${diffDays} days to go` : '';
+                    return (
+                      <div
+                        key={item.label}
+                        className="flex items-center justify-between gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur text-[11px] text-white/80"
+                      >
+                        <div className="text-xs font-semibold text-white/90">{item.label}</div>
+                        {countdown && (
+                          <div className="text-[10px] font-black uppercase tracking-widest text-white/70">{countdown}</div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              <button
-                onClick={reset}
-                className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all text-xs font-black uppercase tracking-widest flex items-center gap-2"
-              >
-                <Eraser size={16} /> Reset
-              </button>
+
+              <div className="flex flex-col sm:flex-row items-stretch gap-3 w-full max-w-sm">
+                <div
+                  className={`flex-1 px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 border-2 ${
+                    validation.status === 'VALID'
+                      ? 'bg-emerald-400/20 border-emerald-300 text-emerald-100'
+                      : validation.status === 'PROBLEM'
+                        ? 'bg-amber-400/20 border-amber-300 text-amber-100'
+                        : 'bg-rose-400/20 border-rose-300 text-rose-100'
+                  }`}
+                >
+                  {validation.status === 'VALID' ? <CheckCircle2 size={16} /> : <AlertTriangle size={16} />}
+                  {validation.status === 'VALID' ? 'Complete' : 'Incomplete'}
+                </div>
+                <button
+                  onClick={reset}
+                  className="flex-1 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2"
+                >
+                  <Eraser size={16} /> Reset
+                </button>
+              </div>
             </div>
           </div>
         </header>
