@@ -400,6 +400,7 @@ export default function App() {
             This site is not affiliated with Wellacre Academy. It is a third-party website for information purposes only. Any
             information around subjects or option choices should be directed to Wellacre Academy directly.
           </p>
+          <p className="text-xs text-slate-500">This is a TWM Production 2026</p>
           <a
             href="https://www.wellacre.org"
             target="_blank"
